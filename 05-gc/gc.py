@@ -11,7 +11,7 @@ dna_strings = {}
 highest_gc_score = 0
 highest_gc_score_id = ""
 
-with open('sample_dataset.txt') as fasta:
+with open('rosalind_gc.txt') as fasta:
   for line in fasta:
     if len(line) > 0 and line[0] == '>':
       name = line[1::].strip()
