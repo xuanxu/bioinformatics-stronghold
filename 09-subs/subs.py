@@ -18,5 +18,5 @@ def find_motif(dna, motif):
     indexes.append(i)
     start_at = i + 1
 
-  # output data shoul be space separated 1-based numbering indexes:
+  # output data should be space separated 1-based numbering indexes:
   return ' '.join(str(x + 1) for x in indexes)
