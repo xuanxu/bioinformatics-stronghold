@@ -6,9 +6,13 @@
 # 4
 
 def fibd_rabbits(n, m):
-  if n < 0:
-    return 0
-  elif n < 3:
-    return 1
-  else:
-    return fibd_rabbits(n-1, m) + fibd_rabbits(n-2, m) - fibd_rabbits(n-1-m, m)
+  fibd = [1, 1]
+  for i in range(3, n+1):
+    if i == m + 1:
+      fibd.append(fibd[-1] + fibd[-2] -1)
+    elif i > m + 1:
+      fibd.append(fibd[-1] + fibd[-2] - fibd[-(m+1)])
+    else:
+      fibd.append(fibd[-1] + fibd[-2])
+
+  return fibd[-1]
