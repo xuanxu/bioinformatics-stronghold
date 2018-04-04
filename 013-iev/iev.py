@@ -31,4 +31,4 @@ def prob_dominant_offspring(genotype_couple):
     return 0
 
 
-# print(next_gen_dominant_phenotype(1, 0, 0, 1, 0, 1, 2))
+# print(next_gen_dominant_phenotype(16291, 17810, 16513, 18197, 19435, 19734, 2))  # => 147958.5
