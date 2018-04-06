@@ -12,7 +12,7 @@
 # AC
 
 def common_motif(dna_strings)
-  longest_motif = ""
+  longest_motif = ''
   dna = dna_strings.min {|a,b| a.length <=> b.length}
 
   (0..dna.length - 1).each do |start|
