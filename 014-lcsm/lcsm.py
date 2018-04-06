@@ -11,6 +11,10 @@
 # Sample Output
 # AC
 
+import sys
+sys.path.insert(0, '../util')
+from util import fasta_file_to_dna_strings
+
 def common_motif(dna_strings):
   longest_motif = ''
   dna = min(dna_strings, key = len)
@@ -22,18 +26,6 @@ def common_motif(dna_strings):
         longest_motif = motif
 
   return longest_motif
-
-def fasta_file_to_dna_strings(fasta_file):
-  dna_strings = {}
-  with open(fasta_file) as fasta:
-    for line in fasta:
-      if len(line) > 0 and line[0] == '>':
-        name = line[1::].strip()
-        dna_strings[name] = ''
-      else:
-        dna_strings[name] += line.strip()
-  return dna_strings
-
 
 list1 = fasta_file_to_dna_strings('rosalind_lcsm.txt').values()
 print(common_motif(list1))
