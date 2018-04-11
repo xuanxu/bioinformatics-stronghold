@@ -7,17 +7,13 @@
 # Rosalind_0808
 # 60.919540
 
-dna_strings = {}
+import sys
+sys.path.insert(0, '../util')
+from util import fasta_file_to_dna_strings
+
+dna_strings = fasta_file_to_dna_strings('rosalind_gc.txt')
 highest_gc_score = 0
 highest_gc_score_id = ""
-
-with open('rosalind_gc.txt') as fasta:
-  for line in fasta:
-    if len(line) > 0 and line[0] == '>':
-      name = line[1::].strip()
-      dna_strings[name] = ""
-    else:
-      dna_strings[name] += line.strip()
 
 for k in dna_strings.keys():
   dna_string = dna_strings[k]
